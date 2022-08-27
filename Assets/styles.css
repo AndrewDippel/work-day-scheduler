@@ -1,0 +1,12 @@
+#dateTime {
+    background-color: purple;
+    color: aliceblue;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    font-size: 30px;
+}
