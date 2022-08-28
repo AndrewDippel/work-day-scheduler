@@ -175,10 +175,12 @@ day.forEach(function (thisHour) {
     });
     $("#container").append(perHourRow);
     var hourDisplay = $("<div>")
-        .text("${thisHour.hour}${thisHour.meridiem}")
-        .attr({ "class": "col-md-3 hour" });
+        .text(`${thisHour.hour}${thisHour.meridiem}`)
+        .attr({ "class": "col-sm-4 col-md-3 p-3 border hour" });
+
+    perHourRow.append(hourDisplay)
 })
-perHourRow.append(hourDisplay)
+
 
 function timeDisplay() {
     timeDisplayEl.textContent = moment().format('MMMM Do YYYY, h:mm:ss a');

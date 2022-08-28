@@ -25,3 +25,8 @@ header {
     background-color: fuchsia;
     color: aliceblue;
 }
+
+#container {
+    background-color: darkorchid;
+    color: aliceblue;
+}
