@@ -16,7 +16,7 @@ header {
     color: aliceblue;
 }
 
-#commentSection {
+.commentSection {
     background-color: darkorchid;
     color: aliceblue;
 }

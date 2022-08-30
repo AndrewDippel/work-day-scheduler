@@ -176,9 +176,26 @@ day.forEach(function (thisHour) {
     $("#container").append(perHourRow);
     var hourDisplay = $("<div>")
         .text(`${thisHour.hour}${thisHour.meridiem}`)
-        .attr({ "class": "col-sm-4 col-md-3 p-3 border hour" });
+        .attr({ "class": "col-sm-3 p-3 border hour" });
 
-    perHourRow.append(hourDisplay)
+    var perHourComment = $("<div>").attr({
+        "class": "col-sm-3 p-3 border row g-2"
+    });
+    var commentDisplay = $("<textarea>");
+    perHourComment.append(commentDisplay);
+    commentDisplay.attr("id", perHourRow.id);
+
+    var buttonDisplay = $("<button>")
+        .attr({
+            "class": "col-sm-3 p-3 border bi bi-save saveButton"
+        });
+
+
+    perHourRow.append(hourDisplay, commentDisplay, buttonDisplay);
+})
+
+$(".saveButton").on("click", function (event) {
+    event.preventDefault();
 })
 
 
