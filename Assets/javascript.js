@@ -179,7 +179,7 @@ day.forEach(function (thisHour) {
         .attr({ "class": "col-sm-3 p-3 border hour" });
 
     var perHourComment = $("<div>").attr({
-        "class": "col-sm-3 p-3 border row g-2"
+        "class": "col-sm-3 p-3 border row g-2 comment"
     });
     var commentDisplay = $("<textarea>");
     perHourComment.append(commentDisplay);
@@ -190,12 +190,14 @@ day.forEach(function (thisHour) {
             "class": "col-sm-3 p-3 border bi bi-save saveButton"
         });
 
-
+    //save.append(saveButton)
     perHourRow.append(hourDisplay, commentDisplay, buttonDisplay);
 })
 
 $(".saveButton").on("click", function (event) {
     event.preventDefault();
+    var save = $(this).siblings(".comment");
+    localStorage.setitem("comment", $("comment").val());
 })
 
 
