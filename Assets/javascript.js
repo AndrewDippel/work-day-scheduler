@@ -185,7 +185,7 @@ day.forEach(function (thisHour) {
     perHourComment.append(commentDisplay);
     commentDisplay.attr("id", perHourRow.id);
 
-    var buttonDisplay = $("<button>")
+    var buttonDisplay = $("<button>Save</button>")
         .attr({
             "class": "col-sm-3 p-3 border bi bi-save saveButton"
         });
