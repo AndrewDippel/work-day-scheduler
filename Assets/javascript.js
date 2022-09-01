@@ -169,43 +169,33 @@ var day = [
     },
 
 ]
-day.forEach(function (thisHour) {
-    var perHourRow = $("<div>").attr({
-        "class": "row"
-    });
+day.forEach(function (thisHour, index) {
+    var perHourRow = $("<div>").addClass("d-flex");
     $("#container").append(perHourRow);
     var hourDisplay = $("<div>")
         .text(`${thisHour.hour}${thisHour.meridiem}`)
-        .attr({ "class": "hour col-md-auto" });
+        .addClass("hour");
 
-    var perHourComment = $("<p>").attr({
-        "class": "comment col-6"
-    });
+    var perHourComment = $("<p>").addClass("comment");
     var commentDisplay = $("<input>");
     perHourComment.append(commentDisplay);
     commentDisplay.attr("id", perHourRow.id);
-
+    var storedComment = localStorage.getItem("comment" + index);
+    if (storedComment) {
+        commentDisplay.val(storedComment)
+    }
     var buttonDisplay = $("<button>Save</button>")
-        .attr({
-            "class": "saveButton col-md-auto"
-        });
-
-    $(".saveButton").on("click", function (event) {
-        event.preventDefault();
-        var commentEl = $(".comment");
-        console.log(commentEl);
-        console.log(commentEl.value);
-        var save = JSON.stringify(commentEl.value);
-        localStorage.setitem("comment", commentEl.val());
-        if (comment !== "") {
-            JSON.parse(localStorage.getItem("comment"));
-
-        }
-    })
-
+        .addClass("saveButton")
+        .on("click", function (event) {
+            event.preventDefault();
+            var save = commentDisplay.val().trim();
+            localStorage.setItem("comment" + index, save);
+        })
     //save.append(saveButton)
     perHourRow.append(hourDisplay, commentDisplay, buttonDisplay);
 })
+
+
 
 
 
