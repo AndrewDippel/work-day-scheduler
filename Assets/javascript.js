@@ -170,7 +170,7 @@ var day = [
 
 ]
 day.forEach(function (thisHour) {
-    var perHourRow = $("<form>").attr({
+    var perHourRow = $("<div>").attr({
         "class": "row"
     });
     $("#container").append(perHourRow);
@@ -178,10 +178,10 @@ day.forEach(function (thisHour) {
         .text(`${thisHour.hour}${thisHour.meridiem}`)
         .attr({ "class": "col-sm-3 p-3 border hour" });
 
-    var perHourComment = $("<div>").attr({
+    var perHourComment = $("<p>").attr({
         "class": "col-sm-3 p-3 border row g-2 comment"
     });
-    var commentDisplay = $("<textarea>");
+    var commentDisplay = $("<input>");
     perHourComment.append(commentDisplay);
     commentDisplay.attr("id", perHourRow.id);
 
@@ -190,15 +190,20 @@ day.forEach(function (thisHour) {
             "class": "col-sm-3 p-3 border bi bi-save saveButton"
         });
 
+    $(".saveButton").on("click", function (event) {
+        event.preventDefault();
+        var save = JSON.stringify(".comment".value.trim());
+        localStorage.setitem("comment", "comment".val());
+        if (comment !== "") {
+            JSON.parse(localStorage.getItem("comment"));
+        }
+    })
+
     //save.append(saveButton)
     perHourRow.append(hourDisplay, commentDisplay, buttonDisplay);
 })
 
-$(".saveButton").on("click", function (event) {
-    event.preventDefault();
-    var save = $(this).siblings(".comment");
-    localStorage.setitem("comment", $("comment").val());
-})
+
 
 
 function timeDisplay() {

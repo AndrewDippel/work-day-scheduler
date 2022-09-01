@@ -15,17 +15,17 @@ header {
     font-size: 30px;
 }
 
-#time {
+#hour {
     background-color: darkmagenta;
     color: aliceblue;
 }
 
-.commentSection {
+.comment {
     background-color: darkorchid;
     color: aliceblue;
 }
 
-#save {
+.saveButton {
     background-color: fuchsia;
     color: aliceblue;
 }
