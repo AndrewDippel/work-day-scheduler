@@ -18,6 +18,12 @@ header {
 .hour {
     background-color: darkmagenta;
     color: aliceblue;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.textDisplay {
+    flex-grow: 1;
+
 }
 
 .comment {
@@ -28,9 +34,15 @@ header {
 .saveButton {
     background-color: fuchsia;
     color: aliceblue;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #container {
     background-color: darkorchid;
     color: aliceblue;
+    border: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px;
+
 }

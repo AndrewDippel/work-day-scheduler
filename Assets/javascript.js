@@ -177,7 +177,7 @@ day.forEach(function (thisHour, index) {
         .addClass("hour");
 
     var perHourComment = $("<p>").addClass("comment");
-    var commentDisplay = $("<input>");
+    var commentDisplay = $("<input>").addClass("textDisplay");
     perHourComment.append(commentDisplay);
     commentDisplay.attr("id", perHourRow.id);
     var storedComment = localStorage.getItem("comment" + index);
