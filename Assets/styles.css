@@ -55,10 +55,16 @@ header {
 
     header {
         background-color: darkorchid;
+        margin-left: 5%px;
     }
 
     .textDisplay {
         background-color: white;
+    }
+
+    #container {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
 }

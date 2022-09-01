@@ -191,11 +191,20 @@ day.forEach(function (thisHour, index) {
             var save = commentDisplay.val().trim();
             localStorage.setItem("comment" + index, save);
         })
+
+    function pastAndPresent() {
+        var currentTime = moment().hour("H");
+
+        if (currentTime >= day.hour) {
+            $(".textDisplay").css("background-color", "#C0C0C0");
+            console.log(currentTime);
+        } else if (currentTime === day.hour) {
+            $(".textDisplay").css("background-color", "#90ee90");
+        }
+    }
     //save.append(saveButton)
     perHourRow.append(hourDisplay, commentDisplay, buttonDisplay);
 })
-
-
 
 
 
